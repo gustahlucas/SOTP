@@ -32,33 +32,35 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 
 # - DOCKERFILE
 1. Crie um Dockerfile em cada repositorio 
-    SERVER: 
-	FROM gcc:4.9 
+
+    **SERVER:** 
+```	FROM gcc:4.9 
 	MAINTAINER Gustavo Lucas 
 	COPY . /usr/src/server
 	WORKDIR /usr/src/server
 	RUN g++ -o server *.cpp -lpthread -std=c++11
 	CMD ["./server"] 
-     
-     CLIENTE:
+   ```  
+     **CLIENTE:**
+	```
 	FROM gcc:4.9 
 	MAINTAINER Gustavo Lucas 
 	COPY . /usr/src/cliente
 	WORKDIR /usr/src/cliente
 	RUN g++ -o cliente *.cpp -lpthread -std=c++11
 	CMD ["./cliente"] 
- 
+ ```
 2. Build e run a Docker Image 
 	SERVER: 
 		1. build:
-			$ docker build -t server .
+			```$ docker build -t server .```
 		2. run:
-			$ docker run -it --rm --name my-running-server server bash
+			```$ docker run -it --rm --name my-running-server server bash```
 	CLIENTE: 
 		1. build:
-			$ docker build -t cliente .
+			```$ docker build -t cliente .```
 		2. run:
-			$ docker run -it --rm --name my-running-cliente cliente bash
+			```$ docker run -it --rm --name my-running-cliente cliente bash```
 
 # - EXECUÇÃO 
  1. ABRA TRES TERMINAIS, PRIMEIRO E SEGUNDO NOS RESPECTIVOS REPOSITORIOS DE SERVER E CLIENTE, O TERCEIRO E PARA ACOMPANHAMENTO DO DOCKERS ATIVOS 
@@ -66,11 +68,11 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
  2. EXECUTE OS PASSOS DOCKERFILE NOS TERMINAIS DE SERVER E CLIENTE 
 
  3. NO TERCEIRO TERMINAL EXECUTE: 
-	$ docker ps
- 	sera mostrado os dockers em uso no momento, em seguida 
+	```$ docker ps```
+ 	Será mostrado os dockers em uso no momento, em seguida 
  execute o comando docker:
-	$ docker inspect my-running-server | grep IPAddress
-	será mostrado o endereço ip do servidor, copie e cole sobre o codigo cliente em:
+	```$ docker inspect my-running-server | grep IPAddress```
+	Será mostrado o endereço ip do servidor, copie e cole sobre o codigo cliente em:
 	```
 	int Client_Socket::initialize_socket( int port_client ){
 	  memset((char*) &server_address, '0', sizeof(server_address));
@@ -84,9 +86,9 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
     ```
  4. VÁ AO TERMINAL DO CLIENTE E REALIZE A build e run do mesmo para atualização da image 
 
- 5. Execute o ./server no terminal do servidor 
+ 5. Execute o ```./server``` no terminal do servidor 
 
- 6. Execute o ./cliente no terminal do cliente 
+ 6. Execute o ```./cliente``` no terminal do cliente 
 
  7. Observe os valores de tempo de execução e mensagem enviados pelo servidor ao cliente. 
 
