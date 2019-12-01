@@ -1,7 +1,7 @@
 # SOTP
 Primos Server Cliente UTP
 # ----------------TRABALHO PRATICO II - III ------------------ 
-**_Grupo: Gustavo Lucas Moreira 
+**_Grupo: Gustavo Lucas Moreira -  
 Philipe Lemos Parreira_** 
 
 Enunciado do trabalho pratico: 
@@ -14,7 +14,7 @@ Assim é necessario fazer a instalação do ambiente docker host local ou maquin
 Maquina utilizada: 
 VirtualBox Oracle - Linux Ubuntu 64-bits
 
-# --Instalação do Docker: 
+# -Instalação do Docker: 
  1. Verificar a versao do kernel para conferir a compatibilidade com o Docker (superior ou igual a 3.8)
     #uname -r
  2. Atualização da lista atual de pacotes 
@@ -30,7 +30,7 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
  7. Utilizando o Docker como sudo:
     #sudo usermod -aG docker ${USER} 
 
-# -- DOCKERFILE --
+# - DOCKERFILE
 1. Crie um Dockerfile em cada repositorio 
     SERVER: 
 	FROM gcc:4.9 
@@ -60,7 +60,7 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 		2. run:
 			$ docker run -it --rm --name my-running-cliente cliente bash
 
-# -- EXECUÇÃO -- 
+# - EXECUÇÃO 
  1. ABRA TRES TERMINAIS, PRIMEIRO E SEGUNDO NOS RESPECTIVOS REPOSITORIOS DE SERVER E CLIENTE, O TERCEIRO E PARA ACOMPANHAMENTO DO DOCKERS ATIVOS 
 
  2. EXECUTE OS PASSOS DOCKERFILE NOS TERMINAIS DE SERVER E CLIENTE 
@@ -71,7 +71,7 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
  execute o comando docker:
 	$ docker inspect my-running-server | grep IPAddress
 	será mostrado o endereço ip do servidor, copie e cole sobre o codigo cliente em:
-
+	```
 	int Client_Socket::initialize_socket( int port_client ){
 	  memset((char*) &server_address, '0', sizeof(server_address));
 	  server_address.sin_family      = ADDR_FAMILY;
@@ -81,6 +81,7 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 	  server_size = sizeof(server_address);
 	  return inet_pton(ADDR_FAMILY, "ip address do servidor", &server_address.sin_addr);
     }
+    ```
  4. VÁ AO TERMINAL DO CLIENTE E REALIZE A build e run do mesmo para atualização da image 
 
  5. Execute o ./server no terminal do servidor 
