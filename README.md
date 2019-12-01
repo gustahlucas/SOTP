@@ -52,14 +52,20 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 	CMD ["./cliente"] 
  	```
 2. Build e run a Docker Image 
-*SERVER:* 
+
+*SERVER:* 	
+
 2.1 build:
 ```$ docker build -t server .```
+
 2.2 run:
 ```$ docker run -it --rm --name my-running-server server bash```
+
 *CLIENTE:* 
+
 2.3 build:
 ```$ docker build -t cliente .```
+
 2.4 run:
 ```$ docker run -it --rm --name my-running-cliente cliente bash```
 
