@@ -53,21 +53,21 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
  	```
 2. Build e run a Docker Image 
 
-*SERVER:* 	
+	**_SERVER:_** 	
 
-2.1 build:
-```$ docker build -t server .```
+	2.1 build:
+	```$ docker build -t server .```
 
-2.2 run:
-```$ docker run -it --rm --name my-running-server server bash```
+	2.2 run:
+	```$ docker run -it --rm --name my-running-server server bash```
 
-*CLIENTE:* 
+	**_CLIENTE:_** 
 
-2.3 build:
-```$ docker build -t cliente .```
+	2.3 build:
+	```$ docker build -t cliente .```
 
-2.4 run:
-```$ docker run -it --rm --name my-running-cliente cliente bash```
+	2.4 run:
+	```$ docker run -it --rm --name my-running-cliente cliente bash```
 
 # - EXECUÇÃO 
  1. ABRA TRES TERMINAIS, PRIMEIRO E SEGUNDO NOS RESPECTIVOS REPOSITORIOS DE SERVER E CLIENTE, O TERCEIRO E PARA ACOMPANHAMENTO DO DOCKERS ATIVOS 
