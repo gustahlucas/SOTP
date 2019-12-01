@@ -1,5 +1,5 @@
 # Sistemas Operacionais - UFOP
-Primos Server Cliente UTP
+Primos Intervalo Server-Client Utilizando Docker 
 # ----------------TRABALHO PRATICO II - III ------------------ 
 **_Grupo: Gustavo Lucas Moreira -  
 Philipe Lemos Parreira_** 
