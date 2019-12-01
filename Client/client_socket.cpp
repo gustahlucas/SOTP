@@ -24,69 +24,19 @@ int Client_Socket::initialize_socket( int port_client ){
 }
 
 int Client_Socket::send_data( void ){
-  int position = (rand() % 1000);
-  message = "1000"; 
-  // switch (position)
-  // {
-  // case 0:
-	 //  message = "meow";
-	 //  break;
-  // case 1:
-	 //  message = "love";
-	 //  break;
-  // case 2:
-	 //  message = "cat";
-	 //  break;
-  // case 3:
-	 //  message = "hello";
-	 //  break;
-  // case 4:
-	 //  message = "home";
-	 //  break;
-  // case 5:
-	 //  message = "sex";
-	 //  break;
-  // case 6:
-	 //  message = "playing";
-	 //  break;
-  // case 7:
-	 //  message = "toy";
-	 //  break;
-  // case 8:
-	 //  message = "concert";
-	 //  break;
-  // default:
-	 //  message = "I'm a badass";
-	 //  break;
-  // }
-  //send(sockfd , message , strlen(message) , 0 );
+  message ="1000"; 
+  
   return sendto(sockfd, message, strlen(message), 0, (struct sockaddr*) & server_address, server_size);
   
 }
 
 int Client_Socket::receive_data( void ){
 	int check = recvfrom(sockfd, buffer, SIZEBUFFER, 0, (struct sockaddr*) & server_client, &client_size);
-	cout <<" Mensagem : " << buffer << endl;
+	cout <<" Quantidade de numeros primos : " << buffer << endl;
   return check;
 }
 
 int Client_Socket::check_data() {
-
-	// if ((strcmp(buffer, "FIND") != 0) && (strcmp(buffer, "NOT FIND") != 0)) {
-	// 	try {
-	// 		int temp = std::stoi(buffer);
-	// 		if (temp == 0)
-	// 			close_socket();
-	// 		else {
-	// 			close_socket();
-	// 			return temp;
-	// 		}
-	// 	}
-	// 	catch (const std::invalid_argument& ia) {
-	// 		return SUCESS;
-	// 	}
-	// }
-
 	return SUCESS;
 }
 

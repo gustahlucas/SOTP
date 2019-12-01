@@ -9,13 +9,14 @@ void client_thread( int );
 
 int main(int argc, char const *argv[]) {
   vector<std::thread> clientThreads;
+  cout << "Cliente inicializado" << endl; 
+  cout <<"Para mudar o valor do limite do intervalo altere no codigo e recompile" << endl; 
 
   for(int i = 0; i < NUM_MAX_CLIENT; i++){
 	std::chrono::milliseconds duration(100);
 	std::this_thread::sleep_for(duration);
     clientThreads.push_back(std::thread(client_thread, PORT));
   }
-  
   for (auto& clientThread : clientThreads) {
 		clientThread.join();
 	}

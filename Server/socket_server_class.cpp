@@ -21,7 +21,7 @@ Service_Socket::Service_Socket( void ){}
 
 
 bool Service_Socket::run_socket(const int port){
-  // cout << "STARTING PORT:" << port << endl;
+  cout << "STARTING PORT:" << port << endl;
   create_socket(port);
 
   return listening_socket(port);
@@ -34,7 +34,7 @@ int Service_Socket::create_socket( const int port ){
   address.sin_addr.s_addr = BIND_LC_INTF; //Conectar a porta em qualquer endereço do socket
   inet_pton(ADDR_FAMILY, "127.0.0.1", &address.sin_addr);
 
-  sockfd = socket(ADDR_FAMILY, SOCK_DGRAM, IPPROTO_UDP); // IPV4, TCP, Protocolo
+  sockfd = socket(ADDR_FAMILY, SOCK_DGRAM, IPPROTO_UDP); // IPV4, UDP, Protocolo
   bind(sockfd, (struct sockaddr*)&address, sizeof(address));
 
   return SUCESS;
@@ -91,15 +91,15 @@ int Service_Socket::handle_connection( int port){
 		if (calcular_primos_intervalo(0, value, reuslt)) {
 			high_resolution_clock::time_point t2 = high_resolution_clock::now();
 			duration<double> time_span = duration_cast<duration<double> >(t2 - t1);
-			printf("\nTempo de execução: %.2f\n", time_span);
+			printf("\nTempo de execução: %.5f\n", time_span);
 			stringstream strs;
   			strs << reuslt;
   			string temp_str = strs.str();
   			char* temp = (char*) temp_str.c_str();
 			sendto(sockfd, temp, sizeof(temp), 0, (struct sockaddr*) & client, sizeof(client));    //Mensagem de volta para o cliente, com o \0
 		}
-		// cout << "CLIENT DESCONNECTED" << endl;
-	 // std::cout << "MESSAGE: " << buffer << endl;
+	 cout << "CLIENT DESCONNECTED" << endl;
+	 std::cout << "MESSAGE: " << buffer << endl;
       break;
     }
   }
@@ -128,7 +128,7 @@ void Service_Socket::select_port(int port)
 		//close(clientInstance);
 	}
 	
-  // cout << "CLIENT " << clientID++ << " CONNECT ON PORT: " << port  <<  endl;
+   cout << "CLIENT " << clientID++ << " CONNECT ON PORT: " << port  <<  endl;
 }
 
 int Service_Socket::get_next_port(int port){

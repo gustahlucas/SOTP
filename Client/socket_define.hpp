@@ -32,7 +32,7 @@
 #define BIND_LC_INTF      INADDR_ANY //Bind local interface
 #define NUM_MAX_HOST      NI_MAXHOST //Number max of hosts
 #define NUM_MAX_SERV      NI_MAXSERV //Number max of service
-#define NUM_MAX_CLIENT    350
+#define NUM_MAX_CLIENT    50
 
 using std::string;
 using std::cin;
