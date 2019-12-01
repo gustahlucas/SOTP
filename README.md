@@ -1,8 +1,8 @@
 # SOTP
 Primos Server Cliente UTP
 # ----------------TRABALHO PRATICO II - III ------------------ 
-Grupo: Gustavo Lucas Moreira 
-       Philipe Lemos Parreira 
+**_Grupo: Gustavo Lucas Moreira 
+Philipe Lemos Parreira_** 
 
 Enunciado do trabalho pratico: 
 
