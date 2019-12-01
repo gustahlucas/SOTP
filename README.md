@@ -1,4 +1,4 @@
-# SOTP
+# Sistemas Operacionais - UFOP
 Primos Server Cliente UTP
 # ----------------TRABALHO PRATICO II - III ------------------ 
 **_Grupo: Gustavo Lucas Moreira -  
