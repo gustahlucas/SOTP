@@ -12,23 +12,23 @@ assim o outra instancia será o servidor. Isto no mesmo computador, mas com cont
 
 Assim é necessario fazer a instalação do ambiente docker host local ou maquina virtual(nesse caso de uso). 
 Maquina utilizada: 
-VirtualBox Oracle - Linux Ubuntu 64-bits
+VirtualBox Oracle - Linux Ubuntu 18.04 64-bits
 
 # -Instalação do Docker: 
  1. Verificar a versao do kernel para conferir a compatibilidade com o Docker (superior ou igual a 3.8)
-    #uname -r
+    ```$ uname -r```
  2. Atualização da lista atual de pacotes 
-    # sudo apt-get update 
+    ```$ sudo apt-get update``` 
  3. Instalação de alguns pacotes de pre-requisitos que permitem que o apt utilize pacotes via HTTPS:
-    #sudo apt install apt-transport-https ca-certificates curl software-properties-common 
+    ```$ sudo apt install apt-transport-https ca-certificates curl software-properties-common``` 
  4. Realização da instalação utilizando o script de instalação por atraves da execução do curl:
-    #curl -fsSL https://get.docker.com/ | sudo apt-key add -
+    ```$ curl -fsSL https://get.docker.com/ | sudo apt-key add -```
  5. Adicionando o repositorio Docker as fontes APT: 
-    #sudo add-pt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    ```$ sudo add-pt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"```
  6. Atualize o banco de dados de pacotes com os pacotes Docker 
-    #sudo apt update 
+    ```$ sudo apt update``` 
  7. Utilizando o Docker como sudo:
-    #sudo usermod -aG docker ${USER} 
+   ```$ sudo usermod -aG docker ${USER}``` 
 
 # - DOCKERFILE
 1. Crie um Dockerfile em cada repositorio 
