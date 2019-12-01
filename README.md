@@ -34,14 +34,15 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 1. Crie um Dockerfile em cada repositorio 
 
     **SERVER:** 
-```	FROM gcc:4.9 
+    ```
+	FROM gcc:4.9 
 	MAINTAINER Gustavo Lucas 
 	COPY . /usr/src/server
 	WORKDIR /usr/src/server
 	RUN g++ -o server *.cpp -lpthread -std=c++11
 	CMD ["./server"] 
    ```  
-     **CLIENTE:**
+    **CLIENTE:**
 	```
 	FROM gcc:4.9 
 	MAINTAINER Gustavo Lucas 
@@ -49,7 +50,7 @@ VirtualBox Oracle - Linux Ubuntu 64-bits
 	WORKDIR /usr/src/cliente
 	RUN g++ -o cliente *.cpp -lpthread -std=c++11
 	CMD ["./cliente"] 
- ```
+ 	```
 2. Build e run a Docker Image 
 	SERVER: 
 		1. build:
